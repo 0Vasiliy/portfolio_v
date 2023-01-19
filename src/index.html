@@ -489,7 +489,7 @@
                         Или оставьте ваши данные и я сам вам напишу:
                     </div>
 
-                    <form action="#" class="contacts__form" id="form">
+                    <form enctype="multipart/form-data" method="POST" class="contacts__form" id="form" onsubmit="send(event, 'send.php')">
                         <div class="contacts__input">
                             <input required name="name" id="name" type="text">
                             <label for="name">Ваше имя</label>

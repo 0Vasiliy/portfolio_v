@@ -1,0 +1,32 @@
+#alertClose {
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #3f2b2b;
+    width: 1.5em;
+    text-align: center;
+    cursor: pointer
+}
+
+#alertBox {
+    position: absolute;
+    margin-top: 300px;
+    top: 700%;
+    bottom: 50%;
+    left: 55%;
+    width: 22%;
+    height: 12%;
+    background-color:#c0c0c0;
+    border-radius: 10px;
+    padding: 10px;
+    z-index: 2;
+    opacity: .9;
+    text-align: center;
+    color: #000;
+    transform: translateX(-150%);
+    animation: ani 1.5s forwards
+}
+    @keyframes ani {
+        0% {transform: translateX(-150%);}
+        100% {transform: translateY(0);}
+    }
