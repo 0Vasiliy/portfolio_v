@@ -94,10 +94,9 @@
             alertClose.style.visibility = "visible";
             alertClose.onclick = closeAlertBox;
         };
-            
 	
 });
-
+               
     // Отправка данных на сервер
     
     function send(event, php){
