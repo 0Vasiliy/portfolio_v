@@ -31,14 +31,14 @@ try {
 
     // Настройки вашей почты
     $mail->Host       = 'smtp.mail.ru'; // SMTP сервера вашей почты
-    $mail->Username   = 'Ron_new'; // Логин на почте
-    $mail->Password   = 'EAXNtxiV8Fwt2EyvsgL4'; // Пароль на почте
+    $mail->Username   = ''; // Логин на почте
+    $mail->Password   = ''; // Пароль на почте
     $mail->SMTPSecure = 'ssl';
     $mail->Port       = 465;
-    $mail->setFrom('Ron_new@mail.ru', 'Ron_new'); // Адрес самой почты и имя отправителя
+    $mail->setFrom('', ''); // Адрес самой почты и имя отправителя
 
     // Получатель письма
-    $mail->addAddress('Vasiliy_pit@mail.ru');  
+    $mail->addAddress('youremail@gmail.com');  
     $mail->addAddress('youremail@gmail.com'); // Ещё один, если нужен
 
     Прикрипление файлов к письму
