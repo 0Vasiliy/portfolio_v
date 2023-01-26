@@ -71,55 +71,28 @@
     })
     })
     
-    
-        // alert
+    //modal
 
-        function closeAlertBox(){
-            alertBox = document.getElementById("alertBox");
-            alertClose = document.getElementById("alertClose");
-            alertBox.style.visibility = "hidden";
-            alertClose.style.visibility = "hidden";
+    let over = document.querySelector('.overlay');
+    let mdClose = document.querySelector('.modal__close');
+    let btnSubmit = document.getElementById('btn_contact');
+
+    btnSubmit.addEventListener('click',(e) => {
+        e.preventDefault();
+        over.classList.add('active');
+      })
+
+      mdClose.addEventListener('click',(e) => {
+        mdClose.classList.remove('active');
+        over.classList.remove('active'); 
+      })
+    
+      document.addEventListener('click',(e) => {
+        if(e.target ===over){
+          over.classList.remove('active');
         }
-        window.alert = function(msg){
-            let id = "alertBox", alertBox, closeId = "alertClose", alertClose;
-            alertBox = document.createElement("div");
-            document.body.appendChild(alertBox);
-            alertBox.id = id;
-            alertBox.innerHTML = msg;
-            alertClose = document.createElement("div");
-            alertClose.id = closeId;
-            alertClose.innerHTML = "x";
-            alertBox.appendChild(alertClose);
-            alertBox.style.visibility = "visible";
-            alertClose.style.visibility = "visible";
-            alertClose.onclick = closeAlertBox;
-        };
-	
+      })
+
 });
                
-    // Отправка данных на сервер
     
-    function send(event, php){
-        console.log("Отправка запроса");
-        event.preventDefault ? event.preventDefault() : event.returnValue = false;
-        let req = new XMLHttpRequest();
-        req.open('POST', php, true);
-        req.onload = function() {
-            if (req.status >= 200 && req.status < 400) {
-            json = JSON.parse(this.response); 
-                console.log(json);
-                
-                if (json.result == "success") {
-                    // Если сообщение отправлено
-                    alert("Сообщение отправлено");
-                } else {
-                    // Если произошла ошибка
-                    alert("Ошибка. Сообщение не отправлено");
-                }
-            // Если не удалось связаться с php файлом
-            } else {alert("Ошибка сервера. Номер: "+req.status);}}; 
-        
-        // Если не удалось отправить запрос. Стоит блок на хостинге
-        req.onerror = function() {alert("Ошибка отправки запроса");};
-        req.send(new FormData(event.target));
-        }
