@@ -75,16 +75,17 @@
 
     let over = document.querySelector('.overlay');
     let mdClose = document.querySelector('.modal__close');
-    let btnSubmit = document.getElementById('btn_contact');
-
-    btnSubmit.addEventListener('click',(e) => {
+   
+    addEventListener('submit',(e) => {
         e.preventDefault();
         over.classList.add('active');
+        e.target.reset();
       })
+
 
       mdClose.addEventListener('click',(e) => {
         mdClose.classList.remove('active');
-        over.classList.remove('active'); 
+        over.classList.remove('active');
       })
     
       document.addEventListener('click',(e) => {
@@ -92,7 +93,7 @@
           over.classList.remove('active');
         }
       })
-
+                
 });
                
     
