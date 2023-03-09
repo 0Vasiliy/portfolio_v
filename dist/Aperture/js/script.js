@@ -76,5 +76,22 @@ mn.style.transform = `rotateZ(${mm}deg)`;
 sc.style.transform = `rotateZ(${ss}deg)`;
 })
 
+//Hamburger
+
+const hamb = document.querySelector('.hamburger');
+      menuList = document.querySelector('.menu_list');
+      menuItem = document.querySelectorAll('.menu_item');
+
+    hamb.addEventListener('click', () => {
+      hamb.classList.toggle('hamburger_active');
+      menuList.classList.toggle('menu_list_active');
+  });
+
+    menuItem.forEach(item => {
+      item.addEventListener('click', () => {
+          hamb.classList.toggle('hamburger_active');
+          menuList.classList.toggle('menu_list_active');
+      })
+  })
 })
 
